@@ -1,17 +1,19 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Jersey_10, Jaro } from "next/font/google";
 import "./globals.css";
 import Layout from "@/components/layout";
 import ControlsProvider from "@/context/ControlsProvider";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const jersey10 = Jersey_10({
+  variable: "--font-jersey",
   subsets: ["latin"],
+  weight: "400",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const jaro = Jaro({
+  variable: "--font-jaro",
   subsets: ["latin"],
+  weight: "400",
 });
 
 export const metadata: Metadata = {
@@ -26,9 +28,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${jaro.variable} ${jersey10.variable} antialiased`}>
         <div className="h-screen">
           <div className="bg-radial from-primary from-20% to-primary-dark h-full to-100% flex gap-6 flex-col px-5">
             <ControlsProvider>
