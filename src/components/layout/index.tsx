@@ -2,10 +2,12 @@ import { FC, ReactNode } from "react";
 import Display from "./Display";
 
 import Controls from "./Controls";
+import Decorations from "./Decorations";
 
 interface LayoutProps {
   children: ReactNode;
 }
+
 const Layout: FC<LayoutProps> = ({ children }) => {
   return (
     <>
@@ -16,9 +18,9 @@ const Layout: FC<LayoutProps> = ({ children }) => {
           </div>
         </div>
       </div>
-
       <Display>{children}</Display>
       <Controls />
+      <Decorations />
     </>
   );
 };
