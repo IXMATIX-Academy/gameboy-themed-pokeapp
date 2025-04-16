@@ -1,4 +1,6 @@
+import Home from "@/components/home";
+
 const page = () => {
-  return <div>GAME BOY</div>;
+  return <Home />;
 };
 export default page;
