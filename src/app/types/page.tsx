@@ -1,6 +1,6 @@
 import Types from "@/components/types";
 
-const page = () => {
+const TypesPage = () => {
   return <Types />;
 };
-export default page;
+export default TypesPage;
