@@ -1,8 +1,8 @@
 import { twMerge } from "tailwind-merge";
 import Curve from "./Curve";
-import { FC } from "react";
+import { FC, HTMLAttributes } from "react";
 
-interface CircleButtonProps {
+interface CircleButtonProps extends HTMLAttributes<HTMLButtonElement> {
   classContainer: string;
   classButton?: string;
   textButton: string;
@@ -12,6 +12,7 @@ const CircleButton: FC<CircleButtonProps> = ({
   classButton,
   textButton,
   classContainer,
+  onClick,
 }) => {
   return (
     <div
@@ -26,6 +27,7 @@ const CircleButton: FC<CircleButtonProps> = ({
           "w-14 h-14 rounded-full border-4 relative active:scale-110",
           classButton
         )}
+        onClick={onClick}
       >
         <Curve className="stroke-white rotate-12" />
       </button>
