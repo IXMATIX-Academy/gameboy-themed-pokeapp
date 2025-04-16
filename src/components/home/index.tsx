@@ -1,4 +1,17 @@
+"use client";
+import { useControls } from "@/context/ControlsProvider";
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
+
 const Home = () => {
+  const { push } = useRouter();
+  const { setActions } = useControls();
+
+  useEffect(() => {
+    setActions({
+      onAccepted: () => push("/types"),
+    });
+  }, [push, setActions]);
   return (
     <div className="font-jersey text-4xl uppercase flex flex-col gap-4">
       <span className="text-center">
